@@ -4,7 +4,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.xml.namespace.QName;
 
@@ -17,12 +16,9 @@ import org.lemsml.model.exceptions.LEMSCompilerException;
 import org.lemsml.model.extended.Component;
 import org.lemsml.model.extended.Lems;
 import org.lemsml.model.extended.PhysicalQuantity;
-import org.lemsml.model.extended.PhysicalQuantityAdapter;
 import org.lemsml.visitors.BaseVisitor;
 import org.lemsml.visitors.DepthFirstTraverserImpl;
 import org.lemsml.visitors.TraversingVisitor;
-
-import com.sun.tools.classfile.Dependencies;
 
 import expr_parser.utils.DirectedGraph;
 import expr_parser.utils.ExpressionParser;
@@ -72,8 +68,10 @@ public class ResolveEvaluables extends TraversingVisitor<Void, Throwable> {
 			QName qualiPName = new QName(pName);
 			if (comp.getOtherAttributes().keySet().contains(qualiPName)) {
 				String def = comp.getOtherAttributes().get(qualiPName);
-				comp.resolve(pName).setDimensionalValue(
-						new PhysicalQuantityAdapter().unmarshal(def));
+				ISymbol<?> resolved = comp.resolve(pName);
+				PhysicalQuantity pq = new PhysicalQuantity(def);
+				pq.setUnit(this.lems.getUnitBySymbol(pq.getUnitSymbol()));
+				resolved.setDimensionalValue(pq);
 			} else {
 				// TODO : decorate ParameterInstance with error instead?
 				throw new LEMSCompilerException("Components of type "
