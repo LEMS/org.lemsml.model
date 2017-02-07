@@ -81,7 +81,7 @@ public class ProcessIncludes extends BaseVisitor<Boolean, Throwable> {
 							inputLems));
 			includedLems.accept(copyContent);
 		} else {
-			logger.warn("Skipping double inclusion of file {}",
+			logger.debug("Skipping double inclusion of file {}",
 					includedFile.getName());
 		}
 

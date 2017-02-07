@@ -109,7 +109,7 @@ public class Scope implements IScope{
 		if(expandedValue.isEmpty()){
 			String w = MessageFormat.format("Evaluation of path ({0}) for [{1}] resulted in empty list",
 					path, getBelongsTo());
-			logger.warn(w);
+			logger.debug(w);
 			Lems lemsRoot = (Lems) ((Scope) getLemsRoot(this)).getBelongsTo();
 			sym.setValueDefinition(PathQDParser.getEmptySelection(dv, lemsRoot));
 		}
