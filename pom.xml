@@ -10,11 +10,17 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
-		<dependency>    
-            <groupId>org.jvnet.jaxb2_commons</groupId>
-            <artifactId>jaxb2-basics</artifactId>
+		<dependency>
+			<groupId>de.twentyeleven.skysail</groupId>
+			<artifactId>org.antlr.stringtemplate-osgi</artifactId>
+			<version>4.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-basics</artifactId>
 			<version>0.9.3</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.jvnet.jaxb2.maven2</groupId>
 			<artifactId>maven-jaxb2-plugin</artifactId>
@@ -31,9 +37,9 @@
 			<version>4.11</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.lemsml.exprparser</groupId>
-		    <artifactId>org.lemsml.exprparser</artifactId>
-		    <version>0.0.4</version>
+			<groupId>org.lemsml.exprparser</groupId>
+			<artifactId>org.lemsml.exprparser</artifactId>
+			<version>0.0.4</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
