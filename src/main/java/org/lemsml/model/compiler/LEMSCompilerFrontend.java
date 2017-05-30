@@ -9,15 +9,13 @@ import org.lemsml.model.extended.Lems;
 /**
  * @author matteocantarelli
  * @author borismarin
- * 
+ *
  */
-public class LEMSCompilerFrontend
-{
+public class LEMSCompilerFrontend {
 
-	Lems lemsDocument;
-	File lemsFile;
-	File cwd;
+	private File lemsFile;
 	File schema;
+	private LEMSSemanticAnalyser semanticAnalyser;
 
 	/**
 	 * @param lemsFile
@@ -25,41 +23,51 @@ public class LEMSCompilerFrontend
 	 * @param cwd
 	 * @param schema
 	 */
-	public LEMSCompilerFrontend(File lemsFile, File lemsSchemaFile)
-	{
+	public LEMSCompilerFrontend(File lemsFile, File lemsSchemaFile) {
 		super();
 		this.lemsFile = lemsFile;
 		this.schema = lemsSchemaFile;
 	}
 
-	public LEMSCompilerFrontend(File lemsFile)
-	{
+	public LEMSCompilerFrontend(File lemsFile) {
 		super();
 		this.lemsFile = lemsFile;
 		this.schema = getCurrentSchema();
 	}
 
-	private File getCurrentSchema()
-	{
-		//TODO: hardcode that somewhere else
-		return new File(getClass().getResource("/Schemas/LEMS_v0.9.0.xsd").getFile());
+	private File getCurrentSchema() {
+		// TODO: hardcode that somewhere else
+		return new File(getClass().getResource("/Schemas/LEMS_v0.9.0.xsd")
+				.getFile());
 	}
 
-	/**
-	 * @throws Throwable
-	 * 
-	 */
-	public Lems generateLEMSDocument() throws Throwable
-	{
+	public Lems generateLEMSDocument() throws Throwable {
 		// First step: parse the LEMS file
-		LEMSParser parser = new LEMSParser(lemsFile, schema);
-		lemsDocument = parser.parse();
+		Lems parsedLems = parseLemsFile(lemsFile, schema);
 
 		// Second step: perform semantic analysis
-		LEMSSemanticAnalyser semanticAnalyser = new LEMSSemanticAnalyser(lemsDocument);
-		semanticAnalyser.analyse();
+		semanticAnalysis(parsedLems);
 
-		return lemsDocument;
+		return parsedLems;
+	}
+
+	static public Lems parseLemsFile(File document, File schema)
+			throws Throwable {
+		LEMSParser parser = new LEMSParser(document, schema);
+		return parser.parse();
+	}
+
+	public Lems semanticAnalysis(Lems lemsDocument) throws Throwable {
+		setSemanticAnalyser(new LEMSSemanticAnalyser(lemsDocument));
+		return getSemanticAnalyser().analyse();
+	}
+
+	public LEMSSemanticAnalyser getSemanticAnalyser() {
+		return semanticAnalyser;
+	}
+
+	public void setSemanticAnalyser(LEMSSemanticAnalyser semanticAnalyser) {
+		this.semanticAnalyser = semanticAnalyser;
 	}
 
 }
