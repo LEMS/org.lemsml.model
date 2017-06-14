@@ -56,7 +56,10 @@ import org.slf4j.LoggerFactory;
 		sb.append(String.format("Overwriting symbol '%s'!\n", key));
 		sb.append(String.format("\t -> old: [defined in %s]: %s\n", oldval.getDefinedIn().getName(), oldval));
 		sb.append(String.format("\t -> new: [defined in %s]: %s\n", newval.getDefinedIn().getName(), newval));
-		logger.warn(sb.toString());
+        if (key!=null)
+            logger.warn(sb.toString());
+        else
+            logger.debug(sb.toString());
 	}
 
 }

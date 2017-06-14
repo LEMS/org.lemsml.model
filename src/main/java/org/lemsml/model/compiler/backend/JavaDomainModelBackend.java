@@ -24,8 +24,8 @@ import org.stringtemplate.v4.STGroupFile;
 
 import com.google.common.base.CaseFormat;
 
-import org.lemsml.expr_parser.utils.DirectedGraph;
-import org.lemsml.expr_parser.utils.TopologicalSort;
+import org.lemsml.exprparser.utils.DirectedGraph;
+import org.lemsml.exprparser.utils.TopologicalSort;
 
 public class JavaDomainModelBackend {
 

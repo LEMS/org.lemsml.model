@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.lemsml.model</groupId>
 	<artifactId>org.lemsml.model</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4</version>
 	<packaging>bundle</packaging>
 	<properties>
 		<build.version2>0.9.0</build.version2>
@@ -11,10 +11,16 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>de.twentyeleven.skysail</groupId>
+			<artifactId>org.antlr.stringtemplate-osgi</artifactId>
+			<version>4.0.2</version>
+		</dependency>
+		<dependency>
 			<groupId>org.jvnet.jaxb2_commons</groupId>
 			<artifactId>jaxb2-basics</artifactId>
 			<version>0.9.3</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.jvnet.jaxb2.maven2</groupId>
 			<artifactId>maven-jaxb2-plugin</artifactId>
@@ -28,24 +34,12 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
-			<scope>test</scope>
+			<version>4.11</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.lemsml.expr-parser</groupId>
-		    <artifactId>org.lemsml.expr-parser</artifactId>
-		    <version>0.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api</artifactId>
-			<version>0.7</version>
-			<type>jar</type>
-		</dependency>
-		<dependency>
-			<groupId>tec.units</groupId>
-			<artifactId>unit-ri</artifactId>
-			<version>0.8-RC2</version>
+			<groupId>org.lemsml.exprparser</groupId>
+			<artifactId>org.lemsml.exprparser</artifactId>
+			<version>0.0.4</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
@@ -93,6 +87,14 @@
 			</releases>
 			<snapshots>
 				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>org.geppetto-mvn-repo</id>
+			<url>https://raw.github.com/openworm/org.geppetto.maven/mvn-repo-nml-1.5.1-lems2</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</repository>
 	</repositories>
