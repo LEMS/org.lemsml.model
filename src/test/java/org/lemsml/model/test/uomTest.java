@@ -2,7 +2,7 @@ package org.lemsml.model.test;
 
 import static org.junit.Assert.assertEquals;
 import static tec.units.ri.AbstractUnit.ONE;
-import static tec.units.ri.unit.SI.METRE;
+import static tec.units.ri.unit.Units.METRE;
 
 import java.math.BigInteger;
 
