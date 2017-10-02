@@ -1,13 +1,13 @@
 package org.lemsml.model.compiler.utils;
 
 import static tec.units.ri.AbstractUnit.ONE;
-import static tec.units.ri.unit.SI.AMPERE;
-import static tec.units.ri.unit.SI.CANDELA;
-import static tec.units.ri.unit.SI.KELVIN;
-import static tec.units.ri.unit.SI.KILOGRAM;
-import static tec.units.ri.unit.SI.METRE;
-import static tec.units.ri.unit.SI.MOLE;
-import static tec.units.ri.unit.SI.SECOND;
+import static tec.units.ri.unit.Units.AMPERE;
+import static tec.units.ri.unit.Units.CANDELA;
+import static tec.units.ri.unit.Units.KELVIN;
+import static tec.units.ri.unit.Units.KILOGRAM;
+import static tec.units.ri.unit.Units.METRE;
+import static tec.units.ri.unit.Units.MOLE;
+import static tec.units.ri.unit.Units.SECOND;
 
 import javax.measure.Unit;
 

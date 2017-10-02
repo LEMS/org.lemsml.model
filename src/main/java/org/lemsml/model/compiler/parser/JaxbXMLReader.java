@@ -59,7 +59,7 @@ public class JaxbXMLReader {
 	public static Unmarshaller getUnmarshaller(Object objFactory) {
 		Unmarshaller unmarshaller = null;
 		try {
-			JAXBContext jc = JAXBContext.newInstance(objFactory.getClass());
+			JAXBContext jc = JAXBContext.newInstance("org.lemsml.model", objFactory.getClass().getClassLoader());
 			unmarshaller = jc.createUnmarshaller();
 			unmarshaller.setProperty("com.sun.xml.bind.ObjectFactory",
 					objFactory);

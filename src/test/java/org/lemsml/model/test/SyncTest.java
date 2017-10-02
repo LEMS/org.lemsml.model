@@ -3,7 +3,7 @@ package org.lemsml.model.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static tec.units.ri.AbstractUnit.ONE;
-import static tec.units.ri.unit.SI.SECOND;
+import static tec.units.ri.unit.Units.SECOND;
 
 import java.io.File;
 import java.util.Set;
