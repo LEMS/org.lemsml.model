@@ -15,20 +15,20 @@
             <artifactId>org.antlr.stringtemplate-osgi</artifactId>
             <version>4.0.2</version>
         </dependency>
-
+        
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
             <artifactId>jaxb2-basics</artifactId>
-            <version>1.11.1</version>
+            <version>0.9.3</version>
         </dependency>
-
-
+        
+        
         <dependency>
             <groupId>org.jvnet.jaxb2.maven2</groupId>
             <artifactId>maven-jaxb2-plugin</artifactId>
-            <version>0.13.2</version>
+            <version>0.12.3</version>
         </dependency>
-
+        
         
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
@@ -132,7 +132,7 @@
             <plugin>
                 <groupId>org.jvnet.jaxb2.maven2</groupId>
                 <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.13.2</version>
+                <version>0.12.3</version>
                 <executions>
                     <execution>
                         <id>LEMSML</id>
@@ -169,7 +169,7 @@
                                 <plugin>
                                     <groupId>org.jvnet.jaxb2_commons</groupId>
                                     <artifactId>jaxb2-basics</artifactId>
-                                    <version>1.11.1</version>
+                                    <version>0.9.3</version>
                                 </plugin>
                                 <plugin>
                                     <groupId>org.jvnet.jaxb2_commons</groupId>
