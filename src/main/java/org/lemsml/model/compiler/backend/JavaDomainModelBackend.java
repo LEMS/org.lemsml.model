@@ -16,8 +16,8 @@ import org.lemsml.model.compiler.LEMSCompilerFrontend;
 import org.lemsml.model.compiler.semantic.visitors.TypeExtensionVisitor;
 import org.lemsml.model.extended.ComponentType;
 import org.lemsml.model.extended.Lems;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.stringtemplate.v4.ST;
 import org.stringtemplate.v4.STGroup;
 import org.stringtemplate.v4.STGroupFile;
@@ -26,11 +26,13 @@ import com.google.common.base.CaseFormat;
 
 import org.lemsml.exprparser.utils.DirectedGraph;
 import org.lemsml.exprparser.utils.TopologicalSort;
+import org.lemsml.model.compiler.utils.Logger;
 
 public class JavaDomainModelBackend {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(JavaDomainModelBackend.class);
+	//private static final Logger logger = LoggerFactory
+	//		.getLogger(JavaDomainModelBackend.class);
+    Logger logger = new Logger(JavaDomainModelBackend.class);
 	private Lems domainDefs;
 	private String pkgName;
 	private STGroup typeSTG;

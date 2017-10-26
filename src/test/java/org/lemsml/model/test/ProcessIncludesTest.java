@@ -15,20 +15,20 @@ import org.lemsml.model.compiler.parser.LEMSParser;
 import org.lemsml.model.compiler.parser.XMLUtils;
 import org.lemsml.model.extended.Component;
 import org.lemsml.model.extended.Lems;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
 import org.xmlunit.builder.DiffBuilder;
 import org.xmlunit.builder.Input;
 import org.xmlunit.diff.Diff;
 
-import ch.qos.logback.classic.Logger;
+//import ch.qos.logback.classic.Logger;
 
 import com.google.common.base.Charsets;
 import com.google.common.io.Files;
+import org.lemsml.model.compiler.utils.Logger;
 
 public class ProcessIncludesTest extends BaseTest {
 
-	private static final Logger logger = (Logger) LoggerFactory
-			.getLogger(ProcessIncludesTest.class);
+	private static final Logger logger = new Logger(ProcessIncludesTest.class);
 	private File schema;
 	private File include0;
 	private Lems lemsDoc;

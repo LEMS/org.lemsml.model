@@ -19,8 +19,8 @@ import org.lemsml.model.exceptions.LEMSCompilerError;
 import org.lemsml.model.exceptions.LEMSCompilerException;
 import org.lemsml.model.extended.interfaces.IScope;
 import org.lemsml.model.extended.interfaces.IScoped;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import com.google.common.base.Optional;
 
@@ -29,10 +29,11 @@ import org.lemsml.exprparser.utils.ExpressionParser;
 import org.lemsml.exprparser.utils.TopologicalSort;
 import org.lemsml.exprparser.utils.UndefinedSymbolException;
 import org.lemsml.exprparser.visitors.AntlrExpressionParser;
+import org.lemsml.model.compiler.utils.Logger;
 
 public class Scope implements IScope{
 
-	private static final Logger logger = LoggerFactory.getLogger(IScope.class);
+	private static final Logger logger = new Logger(IScope.class);
 
 	private Map<String, Symbol> symbolTable = new HashMap<String, Symbol>();
 	private String name;

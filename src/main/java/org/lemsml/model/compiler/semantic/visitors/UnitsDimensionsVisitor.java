@@ -1,13 +1,14 @@
 package org.lemsml.model.compiler.semantic.visitors;
 
+import org.lemsml.model.compiler.utils.Logger;
 import org.lemsml.model.compiler.utils.UOMUtils;
 import org.lemsml.model.extended.Dimension;
 import org.lemsml.model.extended.Lems;
 import org.lemsml.model.extended.LemsNode;
 import org.lemsml.model.extended.Unit;
 import org.lemsml.visitors.BaseVisitor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 
 /**
@@ -17,7 +18,7 @@ import org.slf4j.LoggerFactory;
 public class UnitsDimensionsVisitor extends BaseVisitor<Boolean, Throwable> {
 
 	private Lems lems;
-	private static final Logger logger = LoggerFactory.getLogger(UnitsDimensionsVisitor.class);
+	private static final Logger logger = new Logger(UnitsDimensionsVisitor.class);
 
 	private void logRegistration(String identifier, LemsNode n) {
 		StringBuilder sb = new StringBuilder();

@@ -15,9 +15,10 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
+import org.lemsml.model.compiler.utils.Logger;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.xml.sax.SAXException;
 
 
@@ -26,8 +27,9 @@ import org.xml.sax.SAXException;
  *
  */
 public class XMLUtils {
-	private static final Logger logger =  LoggerFactory
-			.getLogger(XMLUtils.class);
+	//private static final Logger logger =  LoggerFactory
+	//		.getLogger(XMLUtils.class);
+    private static final Logger logger = new Logger(XMLUtils.class);
 
 	/**
 	 * @param document
@@ -37,8 +39,8 @@ public class XMLUtils {
 	public static boolean validate(File document, File schema) {
 		boolean ret = false;
 		try {
-			logger.info("Validating file {} against schema {} ...",
-					document.getName(), schema.getName());
+			//logger.info("Validating file {} against schema {} ...",
+			//		document.getName(), schema.getName());
 			StreamSource src = new StreamSource(document);
 			XMLUtils.parseSchema(schema).newValidator().validate(src);
 			ret = true;

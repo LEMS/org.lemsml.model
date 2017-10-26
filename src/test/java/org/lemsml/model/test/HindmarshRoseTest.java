@@ -16,10 +16,10 @@ import org.lemsml.model.compiler.LEMSCompilerFrontend;
 import org.lemsml.model.compiler.parser.LEMSXMLReader;
 import org.lemsml.model.compiler.parser.XMLUtils;
 import org.lemsml.model.extended.Lems;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
 
-import ch.qos.logback.classic.Level;
-import ch.qos.logback.classic.Logger;
+//import ch.qos.logback.classic.Level;
+//import ch.qos.logback.classic.Logger;
 
 /**
  * @author borismarin
@@ -32,12 +32,12 @@ public class HindmarshRoseTest extends BaseTest {
 	private File hindMarshRoseSimFile;
 	private File nonCanonHindMarshRoseSimFile;
 
-	Logger logger = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
-	Level previousLevel = logger.getLevel();
+	//Logger logger = (Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
+	//Level previousLevel = logger.getLevel();
 
 	@Before
 	public void setUp() {
-		logger.setLevel(Level.INFO);
+		//logger.setLevel(Level.INFO);
 		lemsSchemaFile = getLocalFile("/Schemas/LEMS_v0.9.0.xsd");
 		hindMarshRoseCompTypeFile = getLocalFile("/examples/nml/HindmarshRose3d.xml");
 		hindMarshRoseSimFile = getLocalFile("/examples/nml/Run_Chaotic_HindmarshRose.xml");
@@ -57,11 +57,11 @@ public class HindmarshRoseTest extends BaseTest {
 	@Test
 	public void testCanonicalize() {
 		File xslt = getLocalFile("/Schemas/canonical.xslt");
-		logger.info("Asserting that a noncanonical file fails to validate...");
+		//logger.info("Asserting that a noncanonical file fails to validate...");
 		assertFalse(XMLUtils.validate(nonCanonHindMarshRoseSimFile,
 				lemsSchemaFile));
 
-		logger.info("Asserting that the canonicalized version validates...");
+		//logger.info("Asserting that the canonicalized version validates...");
 		File transformed = XMLUtils.transform(nonCanonHindMarshRoseSimFile,
 				xslt);
 		assertTrue(XMLUtils.validate(transformed, lemsSchemaFile));
@@ -105,7 +105,7 @@ public class HindmarshRoseTest extends BaseTest {
 
 	@After
 	public void cleanUp() {
-		logger.setLevel(previousLevel);
+		//logger.setLevel(previousLevel);
 	}
 
 }
