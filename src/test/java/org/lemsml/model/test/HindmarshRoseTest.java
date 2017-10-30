@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
 
 import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.Logger;
+import java.io.IOException;
 
 /**
  * @author borismarin
@@ -55,7 +56,7 @@ public class HindmarshRoseTest extends BaseTest {
 	}
 
 	@Test
-	public void testCanonicalize() {
+	public void testCanonicalize() throws IOException {
 		File xslt = getLocalFile("/Schemas/canonical.xslt");
 		logger.info("Asserting that a noncanonical file fails to validate...");
 		assertFalse(XMLUtils.validate(nonCanonHindMarshRoseSimFile,
