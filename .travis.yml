@@ -12,7 +12,7 @@ jdk:
   - openjdk7
   - openjdk8
   - oraclejdk8
-  - oraclejdk9
+  # - oraclejdk9  # error with com/sun/codemodel/CodeWriter
 
 install:
 
