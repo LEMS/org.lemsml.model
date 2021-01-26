@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/LEMS/org.lemsml.model.svg?branch=master)](https://travis-ci.org/LEMS/org.lemsml.model)
+[![Build Status](https://travis-ci.com/LEMS/org.lemsml.model.svg?branch=master)](https://travis-ci.com/LEMS/org.lemsml.model)
 
 org.lemsml.model
 ================
