@@ -1,5 +1,4 @@
-dist: precise
-
+dist: trusty
 sudo: false
 
 language: java
@@ -8,11 +7,12 @@ before_install:
     # Temp workaround to remove old references to codehaus repos
 - rm ~/.m2/settings.xml
 
+
 jdk:
-  # - openjdk6
-  #### - openjdk7  temp...
-  - oraclejdk7
+  - openjdk7
+  - openjdk8
   - oraclejdk8
+  # - oraclejdk9  # error with com/sun/codemodel/CodeWriter
 
 install:
 

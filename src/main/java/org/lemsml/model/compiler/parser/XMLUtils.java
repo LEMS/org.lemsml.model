@@ -59,13 +59,17 @@ public class XMLUtils {
 	 * @param transformation
 	 * @return
 	 */
-	public static File transform(File document, File transformation) {
+	public static File transform(File document, File transformation) throws IOException {
 		logger.info("Applying XSLT " + transformation.getName() + " to file "
 				+ document.getName() + "... ");
 		String orig_name = document.getPath();
+        
 		String transf_name = orig_name.substring(0, orig_name.lastIndexOf('.'))
 				+ "_transformed.xml";
-		File outputFile = new File(transf_name);
+        
+		File outputFile = File.createTempFile(transf_name, ".tmp");
+		outputFile.deleteOnExit();
+        
 		TransformerFactory factory = TransformerFactory.newInstance();
 		Source xslt = new StreamSource(transformation);
 		Transformer transformer;
